@@ -1061,29 +1061,20 @@
         }
         .lp-complete-card {
             width: min(100%, 460px);
-            padding: 18px 20px 20px;
-            border-radius: 18px;
-            border: 1px solid #eadfd7;
-            background: #fffdfb;
+            padding: 8px 0 0;
+            border-radius: 24px;
+            background: transparent;
             text-align: center;
-        }
-        .lp-complete-label {
-            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #8f7f79;
-            margin-bottom: 8px;
+            --lp-complete-progress: 0%;
         }
         .lp-complete-title {
             font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
-            font-size: 20px;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.03em;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
             color: #271f1d;
-            margin-bottom: 8px;
+            margin-bottom: 14px;
         }
         .lp-complete-status {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -1091,19 +1082,106 @@
             line-height: 1.6;
             color: #7d6f69;
             margin-bottom: 14px;
+            display: none;
+        }
+        .lp-complete-swipe {
+            position: relative;
+            min-height: 88px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #f5e8e3 0%, #efddd6 100%);
+            border: 1px solid rgba(164,16,52,0.14);
+            overflow: hidden;
+        }
+        .lp-complete-swipe-fill {
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: var(--lp-complete-progress);
+            min-width: 88px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(164,16,52,0.12), rgba(164,16,52,0.22));
+            transition: width 140ms ease;
+        }
+        .lp-complete-swipe-thumb {
+            position: absolute;
+            top: 50%;
+            left: clamp(8px, calc(var(--lp-complete-progress) - 36px), calc(100% - 80px));
+            width: 72px;
+            height: 72px;
+            transform: translateY(-50%);
+            border-radius: 999px;
+            background: #A41034;
+            border: 4px solid #fff8f4;
+            box-shadow: 0 14px 32px rgba(164,16,52,0.24);
+            display: grid;
+            place-items: center;
+            color: #fff8f4;
+            transition: left 140ms ease, background 140ms ease, box-shadow 140ms ease;
+            pointer-events: none;
+        }
+        .lp-complete-swipe-thumb svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 3;
+        }
+        .lp-complete-swipe-text {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            padding: 0 108px 0 110px;
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #8f0b2e;
+            pointer-events: none;
+            text-align: center;
         }
         .lp-complete-slider {
+            position: absolute;
+            inset: 0;
             width: 100%;
+            height: 100%;
             cursor: pointer;
-            accent-color: #A41034;
+            appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+            margin: 0;
+            opacity: 0;
+            z-index: 2;
+        }
+        .lp-complete-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 72px;
+            height: 72px;
+        }
+        .lp-complete-slider::-moz-range-thumb {
+            width: 72px;
+            height: 72px;
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
         }
         .lp-complete-card.is-complete {
-            border-color: rgba(164,16,52,0.26);
-            background: rgba(164,16,52,0.07);
+            --lp-complete-progress: 100%;
         }
-        .lp-complete-card.is-complete .lp-complete-title,
-        .lp-complete-card.is-complete .lp-complete-status {
-            color: #7a0c26;
+        .lp-complete-card.is-complete .lp-complete-title {
+            color: #1f6b34;
+        }
+        .lp-complete-card.is-complete .lp-complete-swipe {
+            background: linear-gradient(180deg, #dff4e4 0%, #d2ecda 100%);
+            border-color: rgba(46,125,50,0.22);
+        }
+        .lp-complete-card.is-complete .lp-complete-swipe-fill {
+            background: linear-gradient(90deg, rgba(76,175,80,0.18), rgba(46,125,50,0.26));
+        }
+        .lp-complete-card.is-complete .lp-complete-swipe-thumb {
+            background: #2E7D32;
+            box-shadow: 0 12px 30px rgba(46,125,50,0.24);
+        }
+        .lp-complete-card.is-complete .lp-complete-swipe-text {
+            color: #1f6b34;
         }
 
         @media (max-width: 640px) {
@@ -1128,10 +1206,27 @@
                 letter-spacing: -0.04em;
             }
             .lp-complete-card {
-                padding: 16px 16px 18px;
+                padding: 6px 0 0;
             }
             .lp-complete-title {
                 font-size: 18px;
+            }
+            .lp-complete-swipe {
+                min-height: 76px;
+            }
+            .lp-complete-swipe-thumb {
+                width: 60px;
+                height: 60px;
+                left: clamp(8px, calc(var(--lp-complete-progress) - 30px), calc(100% - 68px));
+            }
+            .lp-complete-swipe-text {
+                padding: 0 88px 0 92px;
+                font-size: 15px;
+            }
+            .lp-complete-slider::-webkit-slider-thumb,
+            .lp-complete-slider::-moz-range-thumb {
+                width: 60px;
+                height: 60px;
             }
         }
 
@@ -5563,7 +5658,7 @@
         }
 
         function shouldUseAlternateLessonTemplate(grade, subject) {
-            return grade?.id === 'grade-1' && subject?.id === 'english';
+            return false;
         }
 
         function escapeAltParagraphs(items = []) {
@@ -6096,30 +6191,37 @@
                                         <div class="lp-outcome-text">${detail.checks[2] || ''}</div>
                                     </div>
                                 </div>
-                                <div class="lp-complete-wrap">
-                                    <div class="lp-complete-card ${lesson.status === 'Completed' ? 'is-complete' : ''}" data-lesson-complete-card>
-                                        <div class="lp-complete-label">Wrap Up</div>
-                                        <div class="lp-complete-title">${lesson.status === 'Completed' ? 'Lesson Plan Completed' : 'Complete Lesson Plan'}</div>
-                                        <div class="lp-complete-status" data-lesson-complete-status>${lesson.status === 'Completed' ? 'This lesson has been marked complete.' : 'Slide to the end when you are ready to close this lesson.'}</div>
-                                        <input
-                                            type="range"
-                                            min="0"
-                                            max="100"
-                                            step="5"
-                                            value="${lesson.status === 'Completed' ? '100' : '0'}"
-                                            class="lp-complete-slider"
-                                            data-lesson-complete-slider
-                                            data-grade-id="${grade.id}"
-                                            data-subject-id="${subject.id}"
-                                            data-block-id="${block.id}"
-                                            data-lesson-id="${lesson.id}"
-                                            aria-label="Complete lesson plan"
-                                        >
-                                    </div>
-                                </div>
                             </div>
                             </div>
                         </section>
+
+                        <div class="lp-complete-wrap">
+                            <div class="lp-complete-card" data-lesson-complete-card style="--lp-complete-progress:0%;">
+                                <div class="lp-complete-title">Complete this lesson plan</div>
+                                <div class="lp-complete-status" data-lesson-complete-status>Swipe all the way across when you are ready to close this lesson.</div>
+                                <div class="lp-complete-swipe">
+                                    <div class="lp-complete-swipe-fill" aria-hidden="true"></div>
+                                    <div class="lp-complete-swipe-thumb" aria-hidden="true">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                                    </div>
+                                    <div class="lp-complete-swipe-text" aria-hidden="true">Swipe to complete</div>
+                                    <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        step="1"
+                                        value="0"
+                                        class="lp-complete-slider"
+                                        data-lesson-complete-slider
+                                        data-grade-id="${grade.id}"
+                                        data-subject-id="${subject.id}"
+                                        data-block-id="${block.id}"
+                                        data-lesson-id="${lesson.id}"
+                                        aria-label="Complete lesson plan"
+                                    >
+                                </div>
+                            </div>
+                        </div>
 
                         </div>
                         </div>
@@ -6487,12 +6589,17 @@
             const card = slider.closest('[data-lesson-complete-card]');
             if (!card) return;
             const status = card.querySelector('[data-lesson-complete-status]');
+            const swipeText = card.querySelector('.lp-complete-swipe-text');
+            card.style.setProperty('--lp-complete-progress', `${slider.value}%`);
             const isComplete = Number(slider.value) >= 100;
             card.classList.toggle('is-complete', isComplete);
             if (status) {
                 status.textContent = isComplete
                     ? 'Release to save this lesson as completed.'
-                    : 'Slide to the end when you are ready to close this lesson.';
+                    : 'Swipe all the way across when you are ready to close this lesson.';
+            }
+            if (swipeText) {
+                swipeText.textContent = isComplete ? 'Completed' : 'Swipe to complete';
             }
         }
 
@@ -6721,8 +6828,10 @@
                 slider.dataset.blockId,
                 slider.dataset.lessonId
             );
-            renderRoute();
-            lucide.createIcons();
+            slider.value = '100';
+            slider.setAttribute('value', '100');
+            slider.disabled = true;
+            syncLessonCompleteCard(slider);
         });
 
         const profileToggle = document.getElementById('profileToggle');
