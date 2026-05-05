@@ -67,6 +67,15 @@
             opacity: 0.04;
             pointer-events: none;
         }
+        body.lesson-plan-flat .orb {
+            display: none;
+        }
+        body.projector-open header,
+        body.projector-open #gradeToolbar,
+        body.projector-open #toolbarToggle {
+            opacity: 0;
+            pointer-events: none;
+        }
 
         .pill-nav-shadow {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
@@ -359,9 +368,7 @@
 
         .lesson-journey-shell {
             zoom: 0.8;
-            background:
-                radial-gradient(circle at 78% 18%, rgba(177, 15, 58, 0.08), transparent 28rem),
-                linear-gradient(180deg, #FBF8F6 0%, #FFFDFC 48%, #FBF8F6 100%);
+            background: transparent;
         }
 
         .lesson-block {
@@ -400,9 +407,7 @@
             z-index: 1;
             border-radius: 26px;
             padding: 1rem;
-            background:
-                linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 252, 249, 0.78)),
-                rgba(255, 250, 246, 0.72);
+            background: rgba(255, 250, 246, 0.88);
             box-shadow: 0 16px 40px rgba(28, 25, 23, 0.055);
             animation: session-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
             transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
@@ -425,7 +430,7 @@
         }
 
         .lesson-session.is-active::before {
-            background: linear-gradient(90deg, rgba(177, 15, 58, 0.075), rgba(255, 255, 255, 0.68) 76%, rgba(255, 255, 255, 0.18));
+            background: rgba(177, 15, 58, 0.055);
             box-shadow: inset 0 0 0 1px rgba(177, 15, 58, 0.08);
             opacity: 1;
         }
@@ -437,7 +442,7 @@
         }
 
         .lesson-session.is-active:hover::before {
-            background: linear-gradient(90deg, rgba(177, 15, 58, 0.075), rgba(255, 255, 255, 0.82) 76%, rgba(255, 255, 255, 0.24));
+            background: rgba(177, 15, 58, 0.065);
             box-shadow: 0 20px 46px rgba(28, 25, 23, 0.075);
         }
 
@@ -735,7 +740,7 @@
             font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
             font-size: 11px;
             color: #8b7a74;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             white-space: nowrap;
@@ -755,7 +760,7 @@
         /* Sub labels */
         .lp-sub-lbl {
             font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
-            font-size: 12px; font-weight: 700;
+            font-size: 12px; font-weight: 800;
             letter-spacing: 0.10em; text-transform: uppercase;
             color: #94857d; margin-bottom: 10px;
         }
@@ -768,7 +773,7 @@
         .lp-aim-statement {
             font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 800;
             color: #1C1917;
             line-height: 1.45;
             letter-spacing: -0.01em;
@@ -778,6 +783,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 14px;
             color: #5C524E;
+            font-weight: 500;
             line-height: 1.7;
             padding: 13px 17px;
             background: rgba(164,16,52,0.05);
@@ -830,7 +836,7 @@
         .lp-step-label {
             font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
             font-size: 15px;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 0.02em;
             text-transform: uppercase;
             color: #5f3127;
@@ -838,11 +844,12 @@
         }
         .lp-step-text {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 13px; color: #3A2D2A; line-height: 1.65;
+            font-size: 13px; font-weight: 500; color: #3A2D2A; line-height: 1.65;
         }
         .lp-action-kicker {
             font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
             font-size: 11px;
+            font-weight: 700;
             letter-spacing: 0.14em;
             color: #8A7978;
             margin-bottom: 12px;
@@ -903,6 +910,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 14px;
             color: #5C524E;
+            font-weight: 500;
             line-height: 1.6;
         }
 
@@ -966,7 +974,7 @@
         .lp-analysis-question-text {
             font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 800;
             color: #5a0219;
             line-height: 1.5;
         }
@@ -980,6 +988,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 14.5px;
             color: #3A2D2A;
+            font-weight: 500;
             line-height: 1.65;
             margin: 0;
         }
@@ -992,17 +1001,18 @@
         .lp-diff-col { background: #FBF9F7; border: 1px solid #EDE8E4; border-radius: 10px; padding: 16px 18px; }
         .lp-diff-col-lbl {
             font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
-            font-size: 13px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+            font-size: 13px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
             color: #5f3127; margin-bottom: 10px; padding-bottom: 7px;
             border-bottom: 2px solid rgba(95,49,39,0.12);
         }
         .lp-diff-items { display: flex; flex-direction: column; gap: 8px; }
-        .lp-diff-item { font-family: 'Plus Jakarta Sans', sans-serif; display: flex; gap: 7px; font-size: 14px; color: #3A2D2A; line-height: 1.55; }
+        .lp-diff-item { font-family: 'Plus Jakarta Sans', sans-serif; display: flex; gap: 7px; font-size: 14px; font-weight: 500; color: #3A2D2A; line-height: 1.55; }
         .lp-diff-dot { width: 5px; height: 5px; background: #b6805d; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
         .lp-practice-intro {
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 14px;
             color: #5C524E;
+            font-weight: 500;
             line-height: 1.7;
             margin: 0 0 18px;
             padding: 14px 16px;
@@ -1020,6 +1030,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 14px;
             color: #5C524E;
+            font-weight: 500;
             line-height: 1.65;
             margin: 0;
         }
@@ -1034,7 +1045,7 @@
         .approaching .lp-outcome-level { color: #92400E; }
         .meeting     .lp-outcome-level { color: #065F46; }
         .exceeding   .lp-outcome-level { color: #1E40AF; }
-        .lp-outcome-text { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #3A2D2A; line-height: 1.6; }
+        .lp-outcome-text { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #3A2D2A; line-height: 1.6; }
 
         /* Resource list */
         .lp-resource-list { display: flex; flex-direction: column; gap: 1px; }
@@ -1042,7 +1053,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             display: flex; align-items: center; gap: 9px;
             padding: 8px 0;
-            font-size: 14.5px; color: #3A2D2A;
+            font-size: 14.5px; font-weight: 500; color: #3A2D2A;
             border-bottom: 1px solid #f2ece7;
         }
         .lp-resource-row:last-child { border-bottom: 0; }
@@ -1183,6 +1194,225 @@
         .lp-complete-card.is-complete .lp-complete-swipe-text {
             color: #1f6b34;
         }
+        .lp-projector-trigger {
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 36px;
+            padding: 0 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.24);
+            background: rgba(255,255,255,0.12);
+            color: #fff8f4;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+        }
+        .lp-projector-trigger:hover {
+            background: rgba(255,255,255,0.18);
+            border-color: rgba(255,255,255,0.34);
+            transform: translateY(-1px);
+        }
+        .lp-projector-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 140;
+            background:
+                radial-gradient(circle at top left, rgba(244,145,56,0.12), transparent 30%),
+                linear-gradient(180deg, #f7f1ed 0%, #f3e7e0 100%);
+            color: #1c1917;
+        }
+        .lp-projector-shell {
+            height: 100%;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            padding: 26px 28px 22px;
+        }
+        .lp-projector-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 18px;
+        }
+        .lp-projector-context {
+            min-width: 0;
+        }
+        .lp-projector-eyebrow {
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #8f7f79;
+            margin-bottom: 6px;
+        }
+        .lp-projector-lesson {
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #271f1d;
+        }
+        .lp-projector-counter {
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            min-height: 38px;
+            padding: 0 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(164,16,52,0.12);
+            background: rgba(255,255,255,0.7);
+            color: #8f0b2e;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .lp-projector-stage {
+            min-height: 0;
+            display: grid;
+            place-items: center;
+            padding: 16px 0 24px;
+        }
+        .lp-projector-slide {
+            width: min(100%, 1120px);
+            min-height: min(64vh, 720px);
+            border-radius: 34px;
+            border: 1px solid rgba(164,16,52,0.1);
+            background: rgba(255,252,249,0.92);
+            box-shadow: 0 18px 60px rgba(110,33,49,0.09);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            overflow: hidden;
+        }
+        .lp-projector-slide.has-media {
+            grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+        }
+        .lp-projector-copy {
+            padding: 44px 48px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+        }
+        .lp-projector-label {
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #8f0b2e;
+        }
+        .lp-projector-slide-title {
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            font-size: var(--lp-projector-title-size, 54px);
+            line-height: 1.04;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            color: #271f1d;
+            max-width: 14ch;
+        }
+        .lp-projector-step-tag {
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            min-height: 34px;
+            padding: 0 12px;
+            border-radius: 999px;
+            background: rgba(164,16,52,0.08);
+            color: #8f0b2e;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .lp-projector-body {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .lp-projector-body p,
+        .lp-projector-body li {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: var(--lp-projector-body-size, 28px);
+            line-height: 1.45;
+            color: #4f403d;
+        }
+        .lp-projector-body ul {
+            margin: 0;
+            padding-left: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .lp-projector-media {
+            position: relative;
+            min-height: 100%;
+            background: #efe6e0;
+        }
+        .lp-projector-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .lp-projector-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            transition: opacity 180ms ease, transform 180ms ease;
+        }
+        .lp-projector-overlay.is-idle .lp-projector-controls {
+            opacity: 0;
+            transform: translateY(18px);
+            pointer-events: none;
+        }
+        .lp-projector-control {
+            font-family: 'Poppins', 'Plus Jakarta Sans', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 0 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(164,16,52,0.14);
+            background: rgba(255,255,255,0.78);
+            color: #6f102b;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: transform 140ms ease, background 140ms ease, border-color 140ms ease, color 140ms ease;
+        }
+        .lp-projector-control:hover {
+            transform: translateY(-1px);
+            background: #fffdfa;
+            border-color: rgba(164,16,52,0.22);
+        }
+        .lp-projector-control.primary {
+            background: #A41034;
+            border-color: #A41034;
+            color: #fff8f4;
+        }
+        .lp-projector-control.playing {
+            background: #7a0c26;
+            border-color: #7a0c26;
+        }
+        .lp-projector-control.exit {
+            color: #8b6c3e;
+            border-color: rgba(244,145,56,0.22);
+            background: rgba(244,145,56,0.14);
+        }
 
         @media (max-width: 640px) {
             .lp-kp-grid, .lp-outcomes-grid, .lp-diff-cols, .lp-aim-support-grid, .lp-analysis-layout { grid-template-columns: 1fr; }
@@ -1227,6 +1457,40 @@
             .lp-complete-slider::-moz-range-thumb {
                 width: 60px;
                 height: 60px;
+            }
+            .lp-projector-shell {
+                padding: 18px 16px 16px;
+            }
+            .lp-projector-topbar {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 12px;
+            }
+            .lp-projector-lesson {
+                font-size: 18px;
+            }
+            .lp-projector-slide,
+            .lp-projector-slide.has-media {
+                grid-template-columns: minmax(0, 1fr);
+                min-height: auto;
+            }
+            .lp-projector-copy {
+                padding: 26px 22px 24px;
+            }
+            .lp-projector-slide-title {
+                max-width: none;
+            }
+            .lp-projector-body p,
+            .lp-projector-body li {
+                font-size: var(--lp-projector-body-size, 22px);
+            }
+            .lp-projector-media {
+                min-height: 220px;
+            }
+            .lp-projector-control {
+                min-height: 44px;
+                padding: 0 14px;
+                font-size: 11px;
             }
         }
 
@@ -2096,6 +2360,7 @@
         class="pointer-events-none fixed bottom-6 left-1/2 z-50 hidden -translate-x-1/2 rounded-2xl border border-[#A41034]/10 bg-white px-4 py-3 text-sm font-semibold text-[#1C1917] opacity-0 shadow-[0_18px_45px_rgba(123,3,35,0.16)] transition-all duration-300"
         role="status" aria-live="polite"></div>
     <div id="practiceGymGlobalFabRoot"></div>
+    <div id="lessonProjectorRoot"></div>
 
     <script>
         const currentGradeId = 'grade-1';
@@ -2111,6 +2376,23 @@
         const initializedCollapsedBlockRoutes = new Set();
         let lastAutoScrolledBlocksRoute = '';
         let scrollToTopOnRender = false;
+        const projectorFontPresets = [
+            { title: '38px', body: '20px' },
+            { title: '44px', body: '24px' },
+            { title: '50px', body: '28px' }
+        ];
+        let projectorState = {
+            open: false,
+            slides: [],
+            index: 0,
+            playing: false,
+            fontIndex: 1,
+            controlsVisible: true,
+            title: '',
+            context: ''
+        };
+        let projectorTimer = null;
+        let projectorControlsTimer = null;
 
         const iconPaths = {
             book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
@@ -5104,9 +5386,8 @@
             //         </header>
 
             return `
-                <section class="lesson-journey-shell -mx-6 -mt-4 px-6 pb-16 pt-0 md:-mx-12 md:px-12">
-                   
-                    <div class="mx-auto max-w-[1180px] space-y-8 pt-8">
+                <section class="-mx-6 -mt-4 px-6 pb-16 pt-0 md:-mx-12 md:px-12">
+                    <div class="space-y-8 pt-8">
                         ${subject.blocks.map((block, index) => renderBlockSection(block, index, grade, subject)).join('')}
                     </div>
                 </section>
@@ -5954,6 +6235,19 @@
                             </div>
                             <div class="lp-chips">
                                 <span class="lp-chip">${lesson.duration}</span>
+                                <button
+                                    type="button"
+                                    class="focus-ring lp-projector-trigger"
+                                    data-projector-open
+                                    data-grade-id="${grade.id}"
+                                    data-subject-id="${subject.id}"
+                                    data-block-id="${block.id}"
+                                    data-lesson-id="${lesson.id}"
+                                    aria-label="Open projector mode"
+                                >
+                                    <i data-lucide="monitor-up" class="h-4 w-4"></i>
+                                    <span>Projector Mode</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -5993,7 +6287,6 @@
                                     ${detail.vocab ? `
                                         <div class="lp-support-panel">
                                             <div class="lp-sub-lbl">New Words</div>
-                                            <p class="lp-support-note">Open a term to reveal the meaning below the full set.</p>
                                             <div class="lp-vocab-shell">
                                             <div class="lp-vocab-list">
                                                 ${detail.vocab.map(v => `
@@ -6008,7 +6301,6 @@
                                     ` : ''}
                                     <div class="lp-support-panel">
                                         <div class="lp-sub-lbl">Resources</div>
-                                        <p class="lp-support-note">Materials to have ready before the class begins.</p>
                                         <div class="lp-resource-list">
                                             ${(detail.resources || detail.sections[0]?.bullets || []).map((r, index) => `
                                                 <div class="lp-resource-row"><div class="lp-res-index">${index + 1}.</div>${escapeHtml(r)}</div>
@@ -6230,6 +6522,230 @@
             `;
         }
 
+        function normalizeProjectorBody(value) {
+            if (!value) return [];
+            if (Array.isArray(value)) {
+                return value
+                    .map((item) => String(item || '').trim())
+                    .filter(Boolean);
+            }
+            return String(value)
+                .split(/\n+/)
+                .map((item) => item.trim())
+                .filter(Boolean);
+        }
+
+        function buildProjectorSlides(grade, subject, block, lesson, lessonIndex, detail) {
+            const explanationLines = detail.keyPoints?.length
+                ? detail.keyPoints
+                : normalizeProjectorBody(detail.hotAnswer || detail.flow?.[2]?.text || '');
+
+            const slides = [
+                {
+                    section: 'Aim',
+                    label: 'Aim',
+                    title: detail.aim,
+                    body: normalizeProjectorBody(detail.flow?.[0]?.text || ''),
+                    image: detail.heroImage || detail.supportImage || ''
+                }
+            ];
+
+            (detail.sections || []).forEach((step, index) => {
+                slides.push({
+                    section: 'Action',
+                    label: 'Action',
+                    tag: `Step ${index + 1}`,
+                    title: step.kicker || `Step ${index + 1}`,
+                    body: normalizeProjectorBody(step.title),
+                    image: detail.actionImage && index === 1 ? detail.actionImage : ''
+                });
+            });
+
+            slides.push({
+                section: 'Analysis',
+                label: 'Analysis',
+                tag: 'Question',
+                title: detail.bigQuestion || detail.flow?.[2]?.title || 'Think about the lesson',
+                body: [],
+                image: ''
+            });
+
+            slides.push({
+                section: 'Analysis',
+                label: 'Analysis',
+                tag: 'Explanation',
+                title: 'What we learned',
+                body: normalizeProjectorBody(explanationLines),
+                image: detail.analysisImage || ''
+            });
+
+            slides.push({
+                section: 'Application',
+                label: 'Application',
+                title: detail.flow?.[3]?.text || lesson.description || 'Use what you learned on your own.',
+                body: [],
+                image: detail.applicationImage || ''
+            });
+
+            return {
+                title: detail.sessionTitle || block.title,
+                context: `${grade.title} · ${subject.name} · Block ${String(Number(block.id.replace('block-', '')) || '').padStart(2, '0')} · ${getLessonSessionTitle(lesson, lessonIndex)}`,
+                slides
+            };
+        }
+
+        function stopProjectorPlayback() {
+            if (projectorTimer) {
+                clearInterval(projectorTimer);
+                projectorTimer = null;
+            }
+            projectorState.playing = false;
+        }
+
+        function scheduleProjectorControlsHide() {
+            if (projectorControlsTimer) {
+                clearTimeout(projectorControlsTimer);
+            }
+            projectorControlsTimer = setTimeout(() => {
+                if (!projectorState.open) return;
+                projectorState.controlsVisible = false;
+                renderProjectorOverlay();
+            }, 2200);
+        }
+
+        function revealProjectorControls() {
+            if (!projectorState.open) return;
+            const shouldRender = !projectorState.controlsVisible;
+            projectorState.controlsVisible = true;
+            if (shouldRender) {
+                renderProjectorOverlay();
+            }
+            scheduleProjectorControlsHide();
+        }
+
+        function renderProjectorOverlay() {
+            const root = document.getElementById('lessonProjectorRoot');
+            if (!root) return;
+            if (!projectorState.open || !projectorState.slides.length) {
+                root.innerHTML = '';
+                return;
+            }
+
+            const slide = projectorState.slides[projectorState.index];
+            const fontPreset = projectorFontPresets[projectorState.fontIndex] || projectorFontPresets[1];
+            const totalSlides = projectorState.slides.length;
+            const bodyMarkup = slide.body?.length
+                ? `<div class="lp-projector-body">${slide.body.map((line) => `<p>${escapeHtml(line)}</p>`).join('')}</div>`
+                : '';
+
+            root.innerHTML = `
+                <div class="lp-projector-overlay ${projectorState.controlsVisible ? '' : 'is-idle'}" role="dialog" aria-modal="true" aria-label="Lesson projector mode">
+                    <div class="lp-projector-shell">
+                        <div class="lp-projector-topbar">
+                            <div class="lp-projector-context">
+                                <div class="lp-projector-eyebrow">${escapeHtml(projectorState.context)}</div>
+                                <div class="lp-projector-lesson">${escapeHtml(projectorState.title)}</div>
+                            </div>
+                            <div class="lp-projector-counter">Slide ${projectorState.index + 1} of ${totalSlides}</div>
+                        </div>
+                        <div class="lp-projector-stage">
+                            <article
+                                class="lp-projector-slide ${slide.image ? 'has-media' : ''}"
+                                style="--lp-projector-title-size:${fontPreset.title};--lp-projector-body-size:${fontPreset.body};"
+                            >
+                                <div class="lp-projector-copy">
+                                    <div class="lp-projector-label">${escapeHtml(slide.label)}</div>
+                                    ${slide.tag ? `<div class="lp-projector-step-tag">${escapeHtml(slide.tag)}</div>` : ''}
+                                    <div class="lp-projector-slide-title">${escapeHtml(slide.title)}</div>
+                                    ${bodyMarkup}
+                                </div>
+                                ${slide.image ? `
+                                    <div class="lp-projector-media">
+                                        <img src="${escapeHtml(slide.image)}" alt="${escapeHtml(slide.title)}" loading="lazy" decoding="async">
+                                    </div>
+                                ` : ''}
+                            </article>
+                        </div>
+                        <div class="lp-projector-controls">
+                            <button type="button" class="focus-ring lp-projector-control" data-projector-action="prev">Previous</button>
+                            <button type="button" class="focus-ring lp-projector-control primary ${projectorState.playing ? 'playing' : ''}" data-projector-action="play">${projectorState.playing ? 'Pause' : 'Play'}</button>
+                            <button type="button" class="focus-ring lp-projector-control" data-projector-action="next">Next</button>
+                            <button type="button" class="focus-ring lp-projector-control" data-projector-action="font">Font Size</button>
+                            <button type="button" class="focus-ring lp-projector-control exit" data-projector-action="exit">Exit</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function setProjectorSlide(nextIndex) {
+            const lastIndex = Math.max(0, projectorState.slides.length - 1);
+            projectorState.index = Math.max(0, Math.min(lastIndex, nextIndex));
+            renderProjectorOverlay();
+        }
+
+        function toggleProjectorPlayback() {
+            if (!projectorState.open) return;
+            if (projectorState.playing) {
+                stopProjectorPlayback();
+                renderProjectorOverlay();
+                return;
+            }
+
+            projectorState.playing = true;
+            projectorTimer = setInterval(() => {
+                if (projectorState.index >= projectorState.slides.length - 1) {
+                    stopProjectorPlayback();
+                    renderProjectorOverlay();
+                    return;
+                }
+                projectorState.index += 1;
+                renderProjectorOverlay();
+            }, 4500);
+            renderProjectorOverlay();
+        }
+
+        function cycleProjectorFontSize() {
+            projectorState.fontIndex = (projectorState.fontIndex + 1) % projectorFontPresets.length;
+            renderProjectorOverlay();
+        }
+
+        function closeProjectorMode() {
+            stopProjectorPlayback();
+            if (projectorControlsTimer) {
+                clearTimeout(projectorControlsTimer);
+                projectorControlsTimer = null;
+            }
+            projectorState.open = false;
+            projectorState.controlsVisible = true;
+            document.body.classList.remove('projector-open');
+            renderProjectorOverlay();
+        }
+
+        function openProjectorMode(gradeId, subjectId, blockId, lessonId) {
+            const grade = findGrade(gradeId);
+            const subject = findSubject(gradeId, subjectId);
+            const block = findBlock(gradeId, subjectId, blockId);
+            if (!grade || !subject || !block) return;
+            const lessonIndex = Math.max(0, block.lessons.findIndex((item) => item.id === lessonId));
+            const lesson = block.lessons[lessonIndex] || block.lessons[0];
+            const detail = getLessonDetailContent(lesson, lessonIndex, block, grade, subject);
+            const projectorPayload = buildProjectorSlides(grade, subject, block, lesson, lessonIndex, detail);
+
+            stopProjectorPlayback();
+            projectorState.open = true;
+            projectorState.index = 0;
+            projectorState.fontIndex = 1;
+            projectorState.controlsVisible = true;
+            projectorState.slides = projectorPayload.slides;
+            projectorState.title = projectorPayload.title;
+            projectorState.context = projectorPayload.context;
+            document.body.classList.add('projector-open');
+            renderProjectorOverlay();
+            scheduleProjectorControlsHide();
+        }
+
         function renderLessonRow(lesson, index) {
             const actionLabel = lesson.status === 'Completed' ? 'Review' : lesson.status === 'In Progress' ? 'Continue' : 'Start';
             const lessonPlanTitle = getLessonSessionTitle(lesson, index);
@@ -6383,7 +6899,7 @@
                 }
 
                 toolbar.innerHTML = `
-                    <nav class="mx-auto flex max-w-[min(28rem,calc(100vw-2rem))] flex-row flex-wrap items-center justify-center gap-2 rounded-[2rem] border border-[#A41034]/10 bg-white/85 p-2.5 shadow-[0_18px_50px_rgba(123,3,35,0.12)] backdrop-blur-2xl lg:max-w-none lg:flex-col lg:gap-1 lg:p-2" aria-label="Jump to block">
+                    <nav class="mx-auto flex max-w-[min(28rem,calc(100vw-2rem))] flex-row flex-wrap items-center justify-center gap-2 rounded-[2rem] border border-[#A41034]/10 bg-white/85 p-2.5 backdrop-blur-2xl lg:max-w-none lg:flex-col lg:gap-1 lg:p-2" aria-label="Jump to block">
                         ${subject.blocks.map((block, index) => {
                     const blockKey = `${grade.id}:${subject.id}:${block.id}`;
                     return `
@@ -6400,7 +6916,7 @@
             }
 
             toolbar.innerHTML = `
-                <nav class="mx-auto flex max-w-[min(28rem,calc(100vw-2rem))] flex-row flex-wrap items-center justify-center gap-2 rounded-[2rem] border border-[#E9C9CD] bg-white/85 p-2.5 shadow-[0_18px_50px_rgba(123,3,35,0.08)] backdrop-blur-2xl lg:max-w-none lg:flex-col lg:gap-1 lg:p-2" aria-label="Jump to grade">
+                <nav class="mx-auto flex max-w-[min(28rem,calc(100vw-2rem))] flex-row flex-wrap items-center justify-center gap-2 rounded-[2rem] border border-[#E9C9CD] bg-white/85 p-2.5 backdrop-blur-2xl lg:max-w-none lg:flex-col lg:gap-1 lg:p-2" aria-label="Jump to grade">
                     ${getLessonPlanGrades().map((grade) => `
                         <button type="button" class="group/tip relative focus-ring grid h-9 min-w-9 place-items-center rounded-full px-2 text-[12px] font-bold text-[#BD1740] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#BD1740]/5 hover:text-[#8a0f2e] focus:outline-none lg:h-9 lg:min-w-9 lg:px-2 ${grade.id === activeGradeId ? 'bg-[#BD1740]/10' : ''}" data-view="jump-grade" data-grade-id="${grade.id}" aria-label="Jump to ${grade.title}">
                             <span>${getGradeBadgeLabel(grade)}</span>
@@ -6417,6 +6933,10 @@
             const hash = window.location.hash.replace(/^#/, '');
             const params = new URLSearchParams(hash);
             const view = params.get('view') || 'home';
+
+            if (view !== 'lessons' && projectorState.open) {
+                closeProjectorMode();
+            }
 
             if (view === 'blocks') {
                 const grade = findGrade(params.get('grade'));
@@ -6449,6 +6969,44 @@
             }
             lucide.createIcons();
         }
+
+        document.addEventListener('click', (event) => {
+            const target = event.target.closest('[data-projector-open], [data-projector-action]');
+            if (!target) return;
+
+            if (target.hasAttribute('data-projector-open')) {
+                openProjectorMode(
+                    target.dataset.gradeId,
+                    target.dataset.subjectId,
+                    target.dataset.blockId,
+                    target.dataset.lessonId
+                );
+                return;
+            }
+
+            const action = target.dataset.projectorAction;
+            if (action === 'prev') {
+                stopProjectorPlayback();
+                setProjectorSlide(projectorState.index - 1);
+                return;
+            }
+            if (action === 'next') {
+                stopProjectorPlayback();
+                setProjectorSlide(projectorState.index + 1);
+                return;
+            }
+            if (action === 'play') {
+                toggleProjectorPlayback();
+                return;
+            }
+            if (action === 'font') {
+                cycleProjectorFontSize();
+                return;
+            }
+            if (action === 'exit') {
+                closeProjectorMode();
+            }
+        });
 
         document.addEventListener('click', (event) => {
             const target = event.target.closest('[data-view]');
@@ -6555,11 +7113,42 @@
         });
 
         document.addEventListener('keydown', (event) => {
+            if (projectorState.open) {
+                revealProjectorControls();
+                if (event.key === 'Escape') {
+                    closeProjectorMode();
+                    return;
+                }
+                if (event.key === 'ArrowRight') {
+                    stopProjectorPlayback();
+                    setProjectorSlide(projectorState.index + 1);
+                    return;
+                }
+                if (event.key === 'ArrowLeft') {
+                    stopProjectorPlayback();
+                    setProjectorSlide(projectorState.index - 1);
+                    return;
+                }
+                if (event.key.toLowerCase() === 'f') {
+                    cycleProjectorFontSize();
+                    return;
+                }
+                if (event.key === ' ') {
+                    event.preventDefault();
+                    toggleProjectorPlayback();
+                    return;
+                }
+            }
             if (event.key !== 'Enter' && event.key !== ' ') return;
             const target = event.target.closest('[data-view]');
             if (!target) return;
             event.preventDefault();
             target.click();
+        });
+
+        document.addEventListener('mousemove', () => {
+            if (!projectorState.open) return;
+            revealProjectorControls();
         });
 
         let scrollSyncFrame = null;
@@ -6705,6 +7294,7 @@
             activeAppTab = title;
             const preserveHash = Boolean(options.preserveHash);
             const visiblePanel = title === 'Parent Lesson Plan' ? 'Teacher Lesson Plan' : title;
+            document.body.classList.toggle('lesson-plan-flat', visiblePanel === 'Teacher Lesson Plan');
             tabPanels.forEach((panel) => {
                 panel.classList.toggle('hidden', panel.dataset.tabPanel !== visiblePanel);
             });
